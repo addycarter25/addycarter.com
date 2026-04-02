@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addy Carter — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--yellow:#FFE000;--cyan:#00FFFF;--pink:#FFB8FF;
+  --green:#39FF14;--white:#E0E0E0;--dim:#444;
+  --mono:'Share Tech Mono',monospace;--vt:'VT323',monospace;
+}
+body{background:var(--bg);color:var(--green);font-family:var(--mono);font-size:14px;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.site{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.topbar{display:flex;align-items:center;gap:1rem;padding:0.5rem 1rem;border:1px solid var(--dim);border-bottom:none;background:#111}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dot.r{background:#FF5F56}.dot.y{background:#FFBD2E}.dot.g{background:#27C93F}
+.bar-title{flex:1;text-align:center;color:var(--dim);font-size:13px}
+.terminal{border:1px solid var(--dim);background:#0d0d0d;padding:1.5rem 2rem}
+.prompt{color:var(--green);margin-bottom:0.3rem}
+.prompt span.path{color:var(--cyan)}
+.prompt span.sym{color:var(--yellow)}
+.pac-hero{display:flex;align-items:center;gap:1rem;margin:1.5rem 0 0.5rem}
+.pac{width:36px;height:36px;display:inline-block;flex-shrink:0}
+.pac-body{width:36px;height:36px;background:var(--yellow);border-radius:50%;clip-path:polygon(50% 50%,100% 15%,100% 0%,0% 0%,0% 100%,100% 100%,100% 85%);animation:chomp 0.4s steps(1) infinite}
+@keyframes chomp{0%{clip-path:polygon(50% 50%,100% 15%,100% 0%,0% 0%,0% 100%,100% 100%,100% 85%)}50%{clip-path:polygon(50% 50%,100% 50%,100% 0%,0% 0%,0% 100%,100% 100%,100% 50%)}}
+.dots-row{display:flex;gap:8px;align-items:center}
+.pellet{width:6px;height:6px;background:var(--white);border-radius:50%;opacity:0.5}
+.pellet.big{width:12px;height:12px;opacity:0.9;animation:blink 0.8s infinite}
+@keyframes blink{0%,100%{opacity:0.9}50%{opacity:0.2}}
+.hero-name{font-family:var(--vt);font-size:68px;color:var(--yellow);letter-spacing:2px;line-height:1}
+.hero-role{color:var(--cyan);font-size:13px;margin-top:0.3rem;letter-spacing:1px}
+.hero-meta{color:var(--dim);font-size:12px;margin-top:0.25rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.gpa-badge{border:1px solid var(--green);color:var(--green);font-size:11px;padding:2px 8px}
+.divider{border:none;border-top:1px solid var(--dim);margin:1.5rem 0}
+.cmd-line{color:var(--dim);font-size:12px;margin-bottom:0.75rem;margin-top:1.5rem}
+.cmd-line span{color:var(--yellow)}
+.section-label{color:var(--pink);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.75rem}
+.bio-block{padding:1rem;border-left:2px solid var(--yellow);background:rgba(255,224,0,0.04);margin-bottom:1rem}
+.bio-block p{color:var(--white);font-size:13px;line-height:1.8}
+.bio-block p+p{margin-top:0.5rem}
+.bio-link{color:var(--cyan);border-bottom:1px solid rgba(0,255,255,0.3)}
+.bio-link:hover{border-color:var(--cyan)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0.5rem}
+@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+.card{border:1px solid var(--dim);padding:1rem;background:#0f0f0f;transition:border-color 0.2s}
+.card:hover{border-color:var(--cyan)}
+.card-tag{font-size:11px;color:var(--pink);letter-spacing:2px;margin-bottom:0.4rem}
+.card-title{color:var(--yellow);font-family:var(--vt);font-size:22px;margin-bottom:0.4rem;line-height:1.2}
+.card-desc{color:var(--white);font-size:12px;line-height:1.7;opacity:0.85}
+.card-year{color:var(--dim);font-size:11px;margin-top:0.75rem}
+.skills-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem}
+.skill-tag{border:1px solid var(--green);color:var(--green);font-size:11px;padding:3px 10px;letter-spacing:1px}
+.skill-tag:nth-child(3n+1){border-color:var(--cyan);color:var(--cyan)}
+.skill-tag:nth-child(3n+2){border-color:var(--pink);color:var(--pink)}
+.awards-list{margin-bottom:0.5rem}
+.award-item{display:flex;align-items:baseline;gap:0.75rem;padding:0.4rem 0;border-bottom:1px solid #1a1a1a;color:var(--white);font-size:12px}
+.award-item:last-child{border-bottom:none}
+.award-bullet{color:var(--yellow);font-size:16px;line-height:1;flex-shrink:0}
+.award-date{color:var(--dim);font-size:11px;margin-left:auto;white-space:nowrap;padding-left:1rem}
+.ghosts{display:flex;gap:2rem;margin:1rem 0;align-items:center;flex-wrap:wrap}
+.ghost-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px}
+.ghost-wrap span{color:var(--dim);letter-spacing:1px}
+.ghost{width:28px;height:32px}
+.fun-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0.5rem}
+@media(max-width:620px){.fun-grid{grid-template-columns:1fr}}
+.fun-card{border:1px solid var(--dim);padding:1rem;background:#0f0f0f}
+.fun-card-header{color:var(--yellow);font-family:var(--vt);font-size:20px;letter-spacing:1px;margin-bottom:0.75rem;border-bottom:1px solid var(--dim);padding-bottom:0.4rem}
+.fun-item{display:flex;gap:0.5rem;padding:0.35rem 0;border-bottom:1px solid #161616;font-size:12px;color:var(--white);line-height:1.5}
+.fun-item:last-child{border-bottom:none}
+.fun-item-bullet{color:var(--cyan);flex-shrink:0}
+.fun-item-text{opacity:0.9}
+.fun-item-desc{color:var(--dim);font-size:11px;margin-top:1px}
+.fun-link{color:var(--cyan)}
+.fun-link:hover{text-decoration:underline}
+.contact-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.5rem}
+.contact-item{color:var(--cyan);font-size:13px;border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color 0.2s}
+.contact-item:hover{border-color:var(--cyan)}
+.contact-item span{color:var(--dim);margin-right:4px}
+.footer{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--dim);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+.footer-score{color:var(--yellow);font-family:var(--vt);font-size:22px}
+.footer-copy{color:var(--dim);font-size:11px}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--green);animation:blink2 1s step-start infinite;vertical-align:middle;margin-left:2px}
+@keyframes blink2{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+</head>
+<body>
+<div class="site">
+  <div class="topbar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="bar-title">~/addycarter — bash — 80×40</span>
+  </div>
+  <div class="terminal">
+
+    <div class="prompt"><span class="path">~/addycarter</span> <span class="sym">$</span> cat about.txt</div>
+
+    <div class="pac-hero">
+      <div class="pac"><div class="pac-body"></div></div>
+      <div class="dots-row">
+        <div class="pellet big"></div>
+        <div class="pellet"></div><div class="pellet"></div>
+        <div class="pellet"></div><div class="pellet"></div><div class="pellet"></div>
+      </div>
+    </div>
+
+    <div class="hero-name">ADDY CARTER</div>
+    <div class="hero-role">&gt; Cybersecurity Analytics &amp; Operations &nbsp;·&nbsp; Penn State &nbsp;·&nbsp; Class of 2029</div>
+    <div class="hero-meta">
+      <span>West Chester, PA</span>
+      <span style="color:var(--dim)">|</span>
+      <span>GPA: 3.57</span>
+      <span class="gpa-badge">DEAN'S LIST</span>
+    </div>
+
+    <hr class="divider">
+
+    <div class="cmd-line"><span>$</span> cat bio.md</div>
+    <div class="section-label">// whoami</div>
+    <div class="bio-block">
+      <p>Hi! I'm Addy — a cybersecurity student at Penn State passionate about understanding how technology, risk, and security intersect. I enjoy building my skills through coursework, competitions, and real-world experience.</p>
+      <p>Outside of school I like crocheting, traveling, watching movies and TV shows, listening to music and podcasts, and going to concerts. Find me on <a class="bio-link" href="https://linkedin.com/in/addycarter" target="_blank">LinkedIn</a>, <a class="bio-link" href="https://github.com/addycarter25" target="_blank">GitHub</a>, and <a class="bio-link" href="https://www.instagram.com/crochetedbyaddy/" target="_blank">Instagram</a>.</p>
+    </div>
+
+    <div class="cmd-line"><span>$</span> ls ./experience/</div>
+    <div class="section-label">// work experience</div>
+    <div class="grid2">
+      <div class="card">
+        <div class="card-tag">INTERNSHIP</div>
+        <div class="card-title">Marketing &amp; Technical Intern</div>
+        <div class="card-desc">Gravic, Inc. — Validated patented technologies via technical testing, developed features for the Shadowbase product line, and designed technical marketing materials including demos and presentations.</div>
+        <div class="card-year">May 2026 – Aug 2026</div>
+      </div>
+      <div class="card">
+        <div class="card-tag">TEACHING</div>
+        <div class="card-title">Learning Assistant</div>
+        <div class="card-desc">Penn State IST — Assisted in teaching CYBER100, facilitated student learning, prepared assignments, and provided constructive feedback to students.</div>
+        <div class="card-year">Jan 2026 – May 2026</div>
+      </div>
+      <div class="card">
+        <div class="card-tag">AMBASSADOR</div>
+        <div class="card-title">IST Diplomat</div>
+        <div class="card-desc">Penn State College of IST — Represent the college to prospective students, parents, and alumni at events. Guide attendees on programs and campus resources.</div>
+        <div class="card-year">Jan 2025 – Present</div>
+      </div>
+      <div class="card">
+        <div class="card-tag">ATHLETICS</div>
+        <div class="card-title">Softball Manager</div>
+        <div class="card-desc">Penn State Athletics — Use Synergy and Google Sheets to log game events in real time. Support pitching bullpens and maintain an organized practice environment.</div>
+        <div class="card-year">Aug 2025 – Present</div>
+      </div>
+    </div>
+
+    <div class="cmd-line"><span>$</span> cat skills.json | jq '.[]'</div>
+    <div class="section-label">// tech stack</div>
+    <div class="skills-row">
+      <div class="skill-tag">Linux</div>
+      <div class="skill-tag">Windows</div>
+      <div class="skill-tag">Git / GitHub</div>
+      <div class="skill-tag">VS Code</div>
+      <div class="skill-tag">VMware</div>
+      <div class="skill-tag">TCP/IP</div>
+      <div class="skill-tag">Risk Assessment</div>
+      <div class="skill-tag">Threat Hunting</div>
+      <div class="skill-tag">Java (OOP)</div>
+      <div class="skill-tag">App Dev</div>
+      <div class="skill-tag">Synergy</div>
+      <div class="skill-tag">Google Sheets</div>
+    </div>
+
+    <div class="cmd-line"><span>$</span> cat awards.log</div>
+    <div class="section-label">// achievements unlocked</div>
+    <div class="awards-list">
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>DOE CyberForce Competition — 16th place out of 93 teams</span>
+        <span class="award-date">Nov 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>CCDC Alternate — Collegiate Cyber Defense Competition</span>
+        <span class="award-date">Dec 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>Gravic, Inc. Freshman Scholarship</span>
+        <span class="award-date">May 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>Downingtown Alumni Association Award</span>
+        <span class="award-date">Jun 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>Daughters of the American Revolution Chester County Essay Award</span>
+        <span class="award-date">Feb 2025</span>
+      </div>
+    </div>
+
+    <div class="cmd-line"><span>$</span> ./ghosts --mode=friendly</div>
+    <div class="section-label">// current status</div>
+    <div class="ghosts">
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#FF5555"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
+        </svg>
+        <span>PSU CYBER ORG</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#FFB8FF"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
+        </svg>
+        <span>OPEN TO OPPS</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#00FFFF"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
+        </svg>
+        <span>DEAN'S LIST</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#FFE000"/>
+          <circle cx="10" cy="13" r="3" fill="#333"/><circle cx="18" cy="13" r="3" fill="#333"/>
+          <circle cx="11" cy="14" r="1.5" fill="#000"/><circle cx="19" cy="14" r="1.5" fill="#000"/>
+        </svg>
+        <span>SOFTBALL MGR</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#39FF14"/>
+          <circle cx="10" cy="13" r="3" fill="#333"/><circle cx="18" cy="13" r="3" fill="#333"/>
+          <circle cx="11" cy="14" r="1.5" fill="#000"/><circle cx="19" cy="14" r="1.5" fill="#000"/>
+        </svg>
+        <span>CROCHETING</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="cmd-line"><span>$</span> cat fun.txt</div>
+    <div class="section-label">// things that stuck with me</div>
+    <div class="fun-grid">
+      <div class="fun-card">
+        <div class="fun-card-header">SHOWS.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">westworld (season 1 only)</div><div class="fun-item-desc">consciousness, control &amp; unintended consequences of AI</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">the queen's gambit</div><div class="fun-item-desc">obsession, talent, and independence</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">avatar the last airbender</div><div class="fun-item-desc">a masterclass in storytelling and teamwork</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">the twilight zone</div><div class="fun-item-desc">sci-fi as a vehicle for social critique</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">amazing stories</div><div class="fun-item-desc">classic anthology driven by imagination</div></div></div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-header">MOVIES.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">good will hunting</div><div class="fun-item-desc">purpose, identity, and living up to your potential</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">the sound of music</div><div class="fun-item-desc">resistance, family, and one of the greatest soundtracks ever</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">forrest gump</div><div class="fun-item-desc">the American Dream through an unlikely lens</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">wake up dead man (knives out)</div><div class="fun-item-desc">a modern mystery with a thoughtful take on morality</div></div></div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-header">YOUTUBE.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/V_Z8XoPVDBg?si=7e9RfVu07Jd7SATU" target="_blank">the power of delusional self belief</a></div><div class="fun-item-desc">why optimism can be a competitive advantage</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/PsLaI4jDftA?si=SpZFa16qnDLzQiIw" target="_blank">three game theory tactics explained</a></div><div class="fun-item-desc">how to minimize your maximum loss</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/a5rpTBRXXrc?si=-HvG9QIVtJbFB5Dc" target="_blank">the art of faking it</a></div><div class="fun-item-desc">"fake it till you make it," explained more honestly</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/J0DzXAx9qjI?si=Dy2XKhvAlUGD-egl" target="_blank">the importance of real things</a></div><div class="fun-item-desc">why ownership matters in an increasingly digital world</div></div></div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-header">PODCASTS.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">lore</div><div class="fun-item-desc">history's strangest and often darkest tales</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">this american life</div><div class="fun-item-desc">remarkable stories about ordinary — and not so ordinary — people</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">you don't know peanuts</div><div class="fun-item-desc">deep dives into why everyone still loves snoopy</div></div></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="cmd-line"><span>$</span> cat contact.txt</div>
+    <div class="section-label">// get in touch</div>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:addisoncarter2025@gmail.com"><span>✉</span>addisoncarter2025@gmail.com</a>
+      <a class="contact-item" href="https://linkedin.com/in/addycarter" target="_blank"><span>→</span>linkedin</a>
+      <a class="contact-item" href="https://github.com/addycarter25" target="_blank"><span>⌥</span>github</a>
+      <a class="contact-item" href="https://www.instagram.com/crochetedbyaddy/" target="_blank"><span>◈</span>instagram</a>
+    </div>
+
+    <div class="footer">
+      <div class="footer-score">SCORE: 35700 &nbsp; HIGH SCORE: 99999</div>
+      <div class="footer-copy">© 2026 addy carter &nbsp;·&nbsp; built with waka waka &amp; caffeine</div>
+    </div>
+
+    <div style="margin-top:1.2rem">
+      <span class="prompt"><span class="path">~/addycarter</span> <span class="sym">$</span></span>
+      <span class="cursor"></span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Addy Carter — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--yellow:#FFE000;--cyan:#00FFFF;--pink:#FFB8FF;
+  --green:#39FF14;--white:#E0E0E0;--dim:#444;
+  --mono:'Share Tech Mono',monospace;--vt:'VT323',monospace;
+}
+body{background:var(--bg);color:var(--green);font-family:var(--mono);font-size:14px;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.site{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.topbar{display:flex;align-items:center;gap:1rem;padding:0.5rem 1rem;border:1px solid var(--dim);border-bottom:none;background:#111}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dot.r{background:#FF5F56}.dot.y{background:#FFBD2E}.dot.g{background:#27C93F}
+.bar-title{flex:1;text-align:center;color:var(--dim);font-size:13px}
+.terminal{border:1px solid var(--dim);background:#0d0d0d;padding:1.5rem 2rem}
+.prompt{color:var(--green);margin-bottom:0.3rem}
+.prompt span.path{color:var(--cyan)}
+.prompt span.sym{color:var(--yellow)}
+.pac-hero{display:flex;align-items:center;gap:1rem;margin:1.5rem 0 0.5rem}
+.pac{width:36px;height:36px;display:inline-block;flex-shrink:0}
+.pac-body{width:36px;height:36px;background:var(--yellow);border-radius:50%;clip-path:polygon(50% 50%,100% 15%,100% 0%,0% 0%,0% 100%,100% 100%,100% 85%);animation:chomp 0.4s steps(1) infinite}
+@keyframes chomp{0%{clip-path:polygon(50% 50%,100% 15%,100% 0%,0% 0%,0% 100%,100% 100%,100% 85%)}50%{clip-path:polygon(50% 50%,100% 50%,100% 0%,0% 0%,0% 100%,100% 100%,100% 50%)}}
+.dots-row{display:flex;gap:8px;align-items:center}
+.pellet{width:6px;height:6px;background:var(--white);border-radius:50%;opacity:0.5}
+.pellet.big{width:12px;height:12px;opacity:0.9;animation:blink 0.8s infinite}
+@keyframes blink{0%,100%{opacity:0.9}50%{opacity:0.2}}
+.hero-name{font-family:var(--vt);font-size:68px;color:var(--yellow);letter-spacing:2px;line-height:1}
+.hero-role{color:var(--cyan);font-size:13px;margin-top:0.3rem;letter-spacing:1px}
+.hero-meta{color:var(--dim);font-size:12px;margin-top:0.25rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.gpa-badge{border:1px solid var(--green);color:var(--green);font-size:11px;padding:2px 8px}
+.divider{border:none;border-top:1px solid var(--dim);margin:1.5rem 0}
+.cmd-line{color:var(--dim);font-size:12px;margin-bottom:0.75rem;margin-top:1.5rem}
+.cmd-line span{color:var(--yellow)}
+.section-label{color:var(--pink);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.75rem}
+.bio-block{padding:1rem;border-left:2px solid var(--yellow);background:rgba(255,224,0,0.04);margin-bottom:1rem}
+.bio-block p{color:var(--white);font-size:13px;line-height:1.8}
+.bio-block p+p{margin-top:0.5rem}
+.bio-link{color:var(--cyan);border-bottom:1px solid rgba(0,255,255,0.3)}
+.bio-link:hover{border-color:var(--cyan)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0.5rem}
+@media(max-width:620px){.grid2{grid-template-columns:1fr}}
+.card{border:1px solid var(--dim);padding:1rem;background:#0f0f0f;transition:border-color 0.2s}
+.card:hover{border-color:var(--cyan)}
+.card-tag{font-size:11px;color:var(--pink);letter-spacing:2px;margin-bottom:0.4rem}
+.card-title{color:var(--yellow);font-family:var(--vt);font-size:22px;margin-bottom:0.4rem;line-height:1.2}
+.card-desc{color:var(--white);font-size:12px;line-height:1.7;opacity:0.85}
+.card-year{color:var(--dim);font-size:11px;margin-top:0.75rem}
+.skills-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem}
+.skill-tag{border:1px solid var(--green);color:var(--green);font-size:11px;padding:3px 10px;letter-spacing:1px}
+.skill-tag:nth-child(3n+1){border-color:var(--cyan);color:var(--cyan)}
+.skill-tag:nth-child(3n+2){border-color:var(--pink);color:var(--pink)}
+.awards-list{margin-bottom:0.5rem}
+.award-item{display:flex;align-items:baseline;gap:0.75rem;padding:0.4rem 0;border-bottom:1px solid #1a1a1a;color:var(--white);font-size:12px}
+.award-item:last-child{border-bottom:none}
+.award-bullet{color:var(--yellow);font-size:16px;line-height:1;flex-shrink:0}
+.award-date{color:var(--dim);font-size:11px;margin-left:auto;white-space:nowrap;padding-left:1rem}
+.ghosts{display:flex;gap:2rem;margin:1rem 0;align-items:center;flex-wrap:wrap}
+.ghost-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px}
+.ghost-wrap span{color:var(--dim);letter-spacing:1px}
+.ghost{width:28px;height:32px}
+.fun-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0.5rem}
+@media(max-width:620px){.fun-grid{grid-template-columns:1fr}}
+.fun-card{border:1px solid var(--dim);padding:1rem;background:#0f0f0f}
+.fun-card-header{color:var(--yellow);font-family:var(--vt);font-size:20px;letter-spacing:1px;margin-bottom:0.75rem;border-bottom:1px solid var(--dim);padding-bottom:0.4rem}
+.fun-item{display:flex;gap:0.5rem;padding:0.35rem 0;border-bottom:1px solid #161616;font-size:12px;color:var(--white);line-height:1.5}
+.fun-item:last-child{border-bottom:none}
+.fun-item-bullet{color:var(--cyan);flex-shrink:0}
+.fun-item-text{opacity:0.9}
+.fun-item-desc{color:var(--dim);font-size:11px;margin-top:1px}
+.fun-link{color:var(--cyan)}
+.fun-link:hover{text-decoration:underline}
+.contact-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.5rem}
+.contact-item{color:var(--cyan);font-size:13px;border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color 0.2s}
+.contact-item:hover{border-color:var(--cyan)}
+.contact-item span{color:var(--dim);margin-right:4px}
+.footer{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--dim);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+.footer-score{color:var(--yellow);font-family:var(--vt);font-size:22px}
+.footer-copy{color:var(--dim);font-size:11px}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--green);animation:blink2 1s step-start infinite;vertical-align:middle;margin-left:2px}
+@keyframes blink2{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+</head>
+<body>
+<div class="site">
+  <div class="topbar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="bar-title">~/addycarter — bash — 80×40</span>
+  </div>
+  <div class="terminal">
+
+    <div class="prompt"><span class="path">~/addycarter</span> <span class="sym">$</span> cat about.txt</div>
+
+    <div class="pac-hero">
+      <div class="pac"><div class="pac-body"></div></div>
+      <div class="dots-row">
+        <div class="pellet big"></div>
+        <div class="pellet"></div><div class="pellet"></div>
+        <div class="pellet"></div><div class="pellet"></div><div class="pellet"></div>
+      </div>
+    </div>
+
+    <div class="hero-name">ADDY CARTER</div>
+    <div class="hero-role">&gt; Cybersecurity Analytics &amp; Operations &nbsp;·&nbsp; Penn State &nbsp;·&nbsp; Class of 2029</div>
+    <div class="hero-meta">
+      <span>West Chester, PA</span>
+      <span style="color:var(--dim)">|</span>
+      <span>GPA: 3.57</span>
+      <span class="gpa-badge">DEAN'S LIST</span>
+    </div>
+
+    <hr class="divider">
+
+    <div class="cmd-line"><span>$</span> cat bio.md</div>
+    <div class="section-label">// whoami</div>
+    <div class="bio-block">
+      <p>Hi! I'm Addy — a cybersecurity student at Penn State passionate about understanding how technology, risk, and security intersect. I enjoy building my skills through coursework, competitions, and real-world experience.</p>
+      <p>Outside of school I like crocheting, traveling, watching movies and TV shows, listening to music and podcasts, and going to concerts. Find me on <a class="bio-link" href="https://linkedin.com/in/addycarter" target="_blank">LinkedIn</a>, <a class="bio-link" href="https://github.com/addycarter25" target="_blank">GitHub</a>, and <a class="bio-link" href="https://www.instagram.com/crochetedbyaddy/" target="_blank">Instagram</a>.</p>
+    </div>
+
+    <div class="cmd-line"><span>$</span> ls ./experience/</div>
+    <div class="section-label">// work experience</div>
+    <div class="grid2">
+      <div class="card">
+        <div class="card-tag">INTERNSHIP</div>
+        <div class="card-title">Marketing &amp; Technical Intern</div>
+        <div class="card-desc">Gravic, Inc. — Validated patented technologies via technical testing, developed features for the Shadowbase product line, and designed technical marketing materials including demos and presentations.</div>
+        <div class="card-year">May 2026 – Aug 2026</div>
+      </div>
+      <div class="card">
+        <div class="card-tag">TEACHING</div>
+        <div class="card-title">Learning Assistant</div>
+        <div class="card-desc">Penn State IST — Assisted in teaching CYBER100, facilitated student learning, prepared assignments, and provided constructive feedback to students.</div>
+        <div class="card-year">Jan 2026 – May 2026</div>
+      </div>
+      <div class="card">
+        <div class="card-tag">AMBASSADOR</div>
+        <div class="card-title">IST Diplomat</div>
+        <div class="card-desc">Penn State College of IST — Represent the college to prospective students, parents, and alumni at events. Guide attendees on programs and campus resources.</div>
+        <div class="card-year">Jan 2025 – Present</div>
+      </div>
+      <div class="card">
+        <div class="card-tag">ATHLETICS</div>
+        <div class="card-title">Softball Manager</div>
+        <div class="card-desc">Penn State Athletics — Use Synergy and Google Sheets to log game events in real time. Support pitching bullpens and maintain an organized practice environment.</div>
+        <div class="card-year">Aug 2025 – Present</div>
+      </div>
+    </div>
+
+    <div class="cmd-line"><span>$</span> cat skills.json | jq '.[]'</div>
+    <div class="section-label">// tech stack</div>
+    <div class="skills-row">
+      <div class="skill-tag">Linux</div>
+      <div class="skill-tag">Windows</div>
+      <div class="skill-tag">Git / GitHub</div>
+      <div class="skill-tag">VS Code</div>
+      <div class="skill-tag">VMware</div>
+      <div class="skill-tag">TCP/IP</div>
+      <div class="skill-tag">Risk Assessment</div>
+      <div class="skill-tag">Threat Hunting</div>
+      <div class="skill-tag">Java (OOP)</div>
+      <div class="skill-tag">App Dev</div>
+      <div class="skill-tag">Synergy</div>
+      <div class="skill-tag">Google Sheets</div>
+    </div>
+
+    <div class="cmd-line"><span>$</span> cat awards.log</div>
+    <div class="section-label">// achievements unlocked</div>
+    <div class="awards-list">
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>DOE CyberForce Competition — 16th place out of 93 teams</span>
+        <span class="award-date">Nov 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>CCDC Alternate — Collegiate Cyber Defense Competition</span>
+        <span class="award-date">Dec 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>Gravic, Inc. Freshman Scholarship</span>
+        <span class="award-date">May 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>Downingtown Alumni Association Award</span>
+        <span class="award-date">Jun 2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-bullet">★</span>
+        <span>Daughters of the American Revolution Chester County Essay Award</span>
+        <span class="award-date">Feb 2025</span>
+      </div>
+    </div>
+
+    <div class="cmd-line"><span>$</span> ./ghosts --mode=friendly</div>
+    <div class="section-label">// current status</div>
+    <div class="ghosts">
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#FF5555"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
+        </svg>
+        <span>PSU CYBER ORG</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#FFB8FF"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
+        </svg>
+        <span>OPEN TO OPPS</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#00FFFF"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
+        </svg>
+        <span>DEAN'S LIST</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#FFE000"/>
+          <circle cx="10" cy="13" r="3" fill="#333"/><circle cx="18" cy="13" r="3" fill="#333"/>
+          <circle cx="11" cy="14" r="1.5" fill="#000"/><circle cx="19" cy="14" r="1.5" fill="#000"/>
+        </svg>
+        <span>SOFTBALL MGR</span>
+      </div>
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 28 32" fill="none">
+          <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#39FF14"/>
+          <circle cx="10" cy="13" r="3" fill="#333"/><circle cx="18" cy="13" r="3" fill="#333"/>
+          <circle cx="11" cy="14" r="1.5" fill="#000"/><circle cx="19" cy="14" r="1.5" fill="#000"/>
+        </svg>
+        <span>CROCHETING</span>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="cmd-line"><span>$</span> cat fun.txt</div>
+    <div class="section-label">// things that stuck with me</div>
+    <div class="fun-grid">
+      <div class="fun-card">
+        <div class="fun-card-header">SHOWS.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">westworld (season 1 only)</div><div class="fun-item-desc">consciousness, control &amp; unintended consequences of AI</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">the queen's gambit</div><div class="fun-item-desc">obsession, talent, and independence</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">avatar the last airbender</div><div class="fun-item-desc">a masterclass in storytelling and teamwork</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">the twilight zone</div><div class="fun-item-desc">sci-fi as a vehicle for social critique</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">amazing stories</div><div class="fun-item-desc">classic anthology driven by imagination</div></div></div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-header">MOVIES.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">good will hunting</div><div class="fun-item-desc">purpose, identity, and living up to your potential</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">the sound of music</div><div class="fun-item-desc">resistance, family, and one of the greatest soundtracks ever</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">forrest gump</div><div class="fun-item-desc">the American Dream through an unlikely lens</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">wake up dead man (knives out)</div><div class="fun-item-desc">a modern mystery with a thoughtful take on morality</div></div></div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-header">YOUTUBE.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/V_Z8XoPVDBg?si=7e9RfVu07Jd7SATU" target="_blank">the power of delusional self belief</a></div><div class="fun-item-desc">why optimism can be a competitive advantage</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/PsLaI4jDftA?si=SpZFa16qnDLzQiIw" target="_blank">three game theory tactics explained</a></div><div class="fun-item-desc">how to minimize your maximum loss</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/a5rpTBRXXrc?si=-HvG9QIVtJbFB5Dc" target="_blank">the art of faking it</a></div><div class="fun-item-desc">"fake it till you make it," explained more honestly</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text"><a class="fun-link" href="https://youtu.be/J0DzXAx9qjI?si=Dy2XKhvAlUGD-egl" target="_blank">the importance of real things</a></div><div class="fun-item-desc">why ownership matters in an increasingly digital world</div></div></div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-header">PODCASTS.exe</div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">lore</div><div class="fun-item-desc">history's strangest and often darkest tales</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">this american life</div><div class="fun-item-desc">remarkable stories about ordinary — and not so ordinary — people</div></div></div>
+        <div class="fun-item"><span class="fun-item-bullet">&gt;</span><div><div class="fun-item-text">you don't know peanuts</div><div class="fun-item-desc">deep dives into why everyone still loves snoopy</div></div></div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="cmd-line"><span>$</span> cat contact.txt</div>
+    <div class="section-label">// get in touch</div>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:addisoncarter2025@gmail.com"><span>✉</span>addisoncarter2025@gmail.com</a>
+      <a class="contact-item" href="https://linkedin.com/in/addycarter" target="_blank"><span>→</span>linkedin</a>
+      <a class="contact-item" href="https://github.com/addycarter25" target="_blank"><span>⌥</span>github</a>
+      <a class="contact-item" href="https://www.instagram.com/crochetedbyaddy/" target="_blank"><span>◈</span>instagram</a>
+    </div>
+
+    <div class="footer">
+      <div class="footer-score">SCORE: 35700 &nbsp; HIGH SCORE: 99999</div>
+      <div class="footer-copy">© 2026 addy carter &nbsp;·&nbsp; built with waka waka &amp; caffeine</div>
+    </div>
+
+    <div style="margin-top:1.2rem">
+      <span class="prompt"><span class="path">~/addycarter</span> <span class="sym">$</span></span>
+      <span class="cursor"></span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
