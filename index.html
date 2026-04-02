@@ -13,9 +13,9 @@
   --green:#39FF14;--white:#E0E0E0;--dim:#444;
   --mono:'Share Tech Mono',monospace;--vt:'VT323',monospace;
 }
-body{background:var(--bg);color:var(--green);font-family:var(--mono);font-size:14px;line-height:1.6;min-height:100vh}
+body{background:var(--bg);color:var(--green);font-family:var(--mono);font-size:17px;line-height:1.7;min-height:100vh}
 a{color:inherit;text-decoration:none}
-.site{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.site{max-width:100%;margin:0;padding:2rem 3rem}
 .topbar{display:flex;align-items:center;gap:1rem;padding:0.5rem 1rem;border:1px solid var(--dim);border-bottom:none;background:#111}
 .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
 .dot.r{background:#FF5F56}.dot.y{background:#FFBD2E}.dot.g{background:#27C93F}
@@ -37,11 +37,11 @@ a{color:inherit;text-decoration:none}
 .hero-meta{color:var(--dim);font-size:12px;margin-top:0.25rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
 .gpa-badge{border:1px solid var(--green);color:var(--green);font-size:11px;padding:2px 8px}
 .divider{border:none;border-top:1px solid var(--dim);margin:1.5rem 0}
-.cmd-line{color:var(--dim);font-size:12px;margin-bottom:0.75rem;margin-top:1.5rem}
+.cmd-line{color:var(--dim);font-size:15px;margin-bottom:0.75rem;margin-top:1.5rem}
 .cmd-line span{color:var(--yellow)}
-.section-label{color:var(--pink);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.75rem}
+.section-label{color:var(--pink);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.75rem}
 .bio-block{padding:1rem;border-left:2px solid var(--yellow);background:rgba(255,224,0,0.04);margin-bottom:1rem}
-.bio-block p{color:var(--white);font-size:13px;line-height:1.8}
+.bio-block p{color:var(--white);font-size:16px;line-height:1.8}
 .bio-block p+p{margin-top:0.5rem}
 .bio-link{color:var(--cyan);border-bottom:1px solid rgba(0,255,255,0.3)}
 .bio-link:hover{border-color:var(--cyan)}
@@ -51,14 +51,14 @@ a{color:inherit;text-decoration:none}
 .card:hover{border-color:var(--cyan)}
 .card-tag{font-size:11px;color:var(--pink);letter-spacing:2px;margin-bottom:0.4rem}
 .card-title{color:var(--yellow);font-family:var(--vt);font-size:22px;margin-bottom:0.4rem;line-height:1.2}
-.card-desc{color:var(--white);font-size:12px;line-height:1.7;opacity:0.85}
-.card-year{color:var(--dim);font-size:11px;margin-top:0.75rem}
+.card-desc{color:var(--white);font-size:14px;line-height:1.7;opacity:0.85}
+.card-year{color:var(--dim);font-size:13px;margin-top:0.75rem}
 .skills-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem}
-.skill-tag{border:1px solid var(--green);color:var(--green);font-size:11px;padding:3px 10px;letter-spacing:1px}
+.skill-tag{border:1px solid var(--green);color:var(--green);font-size:13px;padding:3px 10px;letter-spacing:1px}
 .skill-tag:nth-child(3n+1){border-color:var(--cyan);color:var(--cyan)}
 .skill-tag:nth-child(3n+2){border-color:var(--pink);color:var(--pink)}
 .awards-list{margin-bottom:0.5rem}
-.award-item{display:flex;align-items:baseline;gap:0.75rem;padding:0.4rem 0;border-bottom:1px solid #1a1a1a;color:var(--white);font-size:12px}
+.award-item{display:flex;align-items:baseline;gap:0.75rem;padding:0.4rem 0;border-bottom:1px solid #1a1a1a;color:var(--white);font-size:15px}
 .award-item:last-child{border-bottom:none}
 .award-bullet{color:var(--yellow);font-size:16px;line-height:1;flex-shrink:0}
 .award-date{color:var(--dim);font-size:11px;margin-left:auto;white-space:nowrap;padding-left:1rem}
@@ -70,15 +70,15 @@ a{color:inherit;text-decoration:none}
 @media(max-width:620px){.fun-grid{grid-template-columns:1fr}}
 .fun-card{border:1px solid var(--dim);padding:1rem;background:#0f0f0f}
 .fun-card-header{color:var(--yellow);font-family:var(--vt);font-size:20px;letter-spacing:1px;margin-bottom:0.75rem;border-bottom:1px solid var(--dim);padding-bottom:0.4rem}
-.fun-item{display:flex;gap:0.5rem;padding:0.35rem 0;border-bottom:1px solid #161616;font-size:12px;color:var(--white);line-height:1.5}
+.fun-item{display:flex;gap:0.5rem;padding:0.35rem 0;border-bottom:1px solid #161616;font-size:15px;color:var(--white);line-height:1.5}
 .fun-item:last-child{border-bottom:none}
 .fun-item-bullet{color:var(--cyan);flex-shrink:0}
 .fun-item-text{opacity:0.9}
-.fun-item-desc{color:var(--dim);font-size:11px;margin-top:1px}
+.fun-item-desc{color:var(--dim);font-size:13px;margin-top:1px}
 .fun-link{color:var(--cyan)}
 .fun-link:hover{text-decoration:underline}
 .contact-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:0.5rem}
-.contact-item{color:var(--cyan);font-size:13px;border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color 0.2s}
+.contact-item{color:var(--cyan);font-size:16px;border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color 0.2s}
 .contact-item:hover{border-color:var(--cyan)}
 .contact-item span{color:var(--dim);margin-right:4px}
 .footer{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--dim);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
@@ -231,16 +231,16 @@ a{color:inherit;text-decoration:none}
       <div class="ghost-wrap">
         <svg class="ghost" viewBox="0 0 28 32" fill="none">
           <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#FFE000"/>
-          <circle cx="10" cy="13" r="3" fill="#333"/><circle cx="18" cy="13" r="3" fill="#333"/>
-          <circle cx="11" cy="14" r="1.5" fill="#000"/><circle cx="19" cy="14" r="1.5" fill="#000"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
         </svg>
         <span>SOFTBALL MGR</span>
       </div>
       <div class="ghost-wrap">
         <svg class="ghost" viewBox="0 0 28 32" fill="none">
           <path d="M14 2C7.373 2 2 7.373 2 14v14l3.5-3 3.5 3 3.5-3 3.5 3 3.5-3 3.5 3V14C26 7.373 20.627 2 14 2z" fill="#39FF14"/>
-          <circle cx="10" cy="13" r="3" fill="#333"/><circle cx="18" cy="13" r="3" fill="#333"/>
-          <circle cx="11" cy="14" r="1.5" fill="#000"/><circle cx="19" cy="14" r="1.5" fill="#000"/>
+          <circle cx="10" cy="13" r="3" fill="white"/><circle cx="18" cy="13" r="3" fill="white"/>
+          <circle cx="11" cy="14" r="1.5" fill="#222"/><circle cx="19" cy="14" r="1.5" fill="#222"/>
         </svg>
         <span>CROCHETING</span>
       </div>
@@ -286,7 +286,7 @@ a{color:inherit;text-decoration:none}
     <div class="cmd-line"><span>$</span> cat contact.txt</div>
     <div class="section-label">// get in touch</div>
     <div class="contact-row">
-      <a class="contact-item" href="mailto:addisoncarter2025@gmail.com"><span>✉</span>addisoncarter2025@gmail.com</a>
+      <a class="contact-item" href="/cdn-cgi/l/email-protection#d8b9bcbcb1abb7b6bbb9aaacbdaaeae8eaed98bfb5b9b1b4f6bbb7b5"><span>✉</span><span class="__cf_email__" data-cfemail="a8c9ccccc1dbc7c6cbc9dadccdda9a989a9de8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></a>
       <a class="contact-item" href="https://linkedin.com/in/addycarter" target="_blank"><span>→</span>linkedin</a>
       <a class="contact-item" href="https://github.com/addycarter25" target="_blank"><span>⌥</span>github</a>
       <a class="contact-item" href="https://www.instagram.com/crochetedbyaddy/" target="_blank"><span>◈</span>instagram</a>
@@ -298,11 +298,4 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <div style="margin-top:1.2rem">
-      <span class="prompt"><span class="path">~/addycarter</span> <span class="sym">$</span></span>
-      <span class="cursor"></span>
-    </div>
-
-  </div>
-</div>
-</body>
-</html>
+      <span class="prompt"><
