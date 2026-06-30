@@ -276,12 +276,9 @@
   </div>
 
   <div class="blog-section">
-
     <div class="post-list" id="postList">
 
-      <!-- EXAMPLE POST — replace with your own -->
-      
-      <a class="post-row" href="#" data-post="2048-cupcakes" onclick="openPost('2048-cupcakes'); return false;">
+      <a class="post-row" href="#post-binary" onclick="openPost('2048-cupcakes'); return false;">
         <div class="post-left">
           <div class="post-tag">Learning</div>
           <div class="post-title">How 2048 Cupcakes Taught Me Binary</div>
@@ -290,19 +287,19 @@
         <div class="post-date">June 2026</div>
       </a>
 
-      <a class="post-row" href="#" data-post="internship-advice" onclick="openPost('internship-advice'); return false;">
+      <a class="post-row" href="#post-internship" onclick="openPost('internship-advice'); return false;">
         <div class="post-left">
           <div class="post-tag">Internship</div>
-          <div class="post-title">What I’ve Learned From My Internship So Far</div>
-          <div class="post-excerpt">I just completed a month at Gravic. Here are a few things I’d like to share about the experience.</div>
+          <div class="post-title">What I've Learned From My Internship So Far</div>
+          <div class="post-excerpt">I just completed a month at Gravic. Here are a few things I'd like to share about the experience.</div>
         </div>
         <div class="post-date">June 2026</div>
       </a>
-      
+
       <!--
         TO ADD A NEW POST:
-        1. Copy the <a class="post-row"> block above and give it a new data-post value (e.g. data-post="post2")
-        2. Fill in your tag, title, excerpt, and date
+        1. Copy a .post-row block above, give it a new href="#post-yourslug" and update onclick to match your key
+        2. Fill in tag, title, excerpt, and date
         3. Add a matching entry in the `posts` object in the <script> below
       -->
 
@@ -331,119 +328,127 @@
   </footer>
 
   <script>
-    // ─── YOUR POSTS ──────────────────────────────────────────────────────────────
-    // Each key matches the data-post value on the .post-row link in the HTML above.
-    // body supports <p>, <h3>, and other basic HTML tags.
-const posts = {
-  "2048-cupcakes": {
-    title: "How 2048 Cupcakes Taught Me Binary",
-    tag: "Learning",
-    date: "June 2026",
-    body: `
-      <p>
-        The first time I learned how to code was during my freshman year Introduction to Programming class in high school.
-        Fast forward to today, and I don't remember much from that class. However, I do remember learning about the binary number system.
-      </p>
-      <p>
-        Binary is how computers communicate. Instead of human language, computers represent all information using just two states: 0 and 1.
-        Each of these numbers, called bits, can be thought of as "off" and "on" switches.
-        Every position in a binary number represents a power of two, and whenever there's a 1 in a position, that value is included in the final number.
-      </p>
-      <p>
-        For example, if I wanted to write the number 8 in binary, it would be written as 1000.
-        Reading from right to left, the positions represent 2&#x2070;, 2&#xB9;, 2&#xB2;, and 2&#xB3;.
-        Since only the 2&#xB3; position is turned on, the value is 8. But what does 2048 Cupcakes have to do with any of this?
-      </p>
-      <p>
-        If you've played 2048, you know that same-value blocks merge and double.
-        After every move, a new block appears on the board.
-        The goal is to keep combining blocks to create the highest value possible before you run out of space.
-      </p>
-      <p>
-        My favorite part about the cupcake version of 2048 is the images used for each block.
-        Every number is represented by a different cupcake. 2 is Vanilla Birthday, 4 is Bubblegum Pink, 8 is Sunshine Vanilla, and so on.
-        The cupcakes make the game much more fun than the original version, but the numbers behind them remain constant.
-      </p>
-      <p>
-        Every time you combine two matching cupcakes, the value doubles.
-        The game goes from 2 to 4, then 8, 16, 32, 64, 128, 256, and beyond.
-        The game skips 1, but from 2 onward, every value is a power of two. That pattern is exactly what binary is built on.
-      </p>
-      <p>
-        This concept is especially important in networking. An 8-bit binary number, called an octet, can represent 256 different values, ranging from 0 to 255.
-        Each bit represents one power of two, beginning with 2&#x2070; and ending with 2&#x2077;.
-        Once I understood that connection, the binary number system became much easier for me to visualize.
-      </p>
-      <p>
-        I think that's one of the reasons this game helped me understand binary.
-        Yes, I have the powers memorized and can calculate binary numbers in my head, but I can also see the cupcakes.
-        It turned binary into something visual, and I found myself recognizing the pattern easily.
-      </p>
-      <p>
-        If you're trying to learn binary, I highly recommend spending a little time playing 2048 Cupcakes,
-        although maybe not to the extent I did this past semester.
-        It's a fun way to become more familiar with powers of two while trying to unlock every cupcake.
-      </p>
-      <p>
-        Finally, I'd like to thank a friend for helping me understand binary this past semester.
-        If you're reading this, you know who you are.
-      </p>
-      <p><a href="https://2048cupcakes.net" target="_blank">https://2048cupcakes.net</a></p>
-    `
-  },
-  "internship-advice": {
-    title: "What I've Learned From My Internship So Far",
-    tag: "Internship",
-    date: "June 2026",
-    body: `
-      <p>
-        As someone pursuing a cybersecurity degree, I didn't initially expect to find myself in a marketing internship.
-        However, I've learned that any opportunity in a professional environment can provide valuable experience,
-        regardless of the specific field.
-      </p>
-      <p>
-        Before starting at Gravic, I had done some research on the company and was somewhat familiar with its software products.
-        However, my role has focused more on marketing and lab-related work rather than the core software itself.
-        My responsibilities have included creating presentations, writing scripts, and supporting lab projects.
-        After a month in the role, I've already learned several lessons that are useful for anyone preparing for an office environment.
-      </p>
-      <h3>Communication</h3>
-      <p>
-        Tools like Outlook and Microsoft Teams are used constantly in the workplace.
-        Much of my work involves communicating with individuals I may not have met in person, often multiple times a day,
-        to request feedback or clarification.
-        This has pushed me outside of my comfort zone, especially since I wasn't used to regularly asking for help while producing client-facing materials.
-        I also underestimated how iterative the review process can be, with multiple rounds of feedback and revision being a normal part of workflow.
-      </p>
-      <h3>Expectations</h3>
-      <p>
-        At the beginning of my internship, I was assigned smaller marketing tasks, including designing a branded item for clients.
-        After submitting my initial design, I moved on to other work and didn't initially realize the level of impact my contribution would have.
-        During a weekly meeting with the marketing team and company leadership, I learned that my work was being seriously considered for use.
-        This helped me better understand both the expectations and the real-world impact of even small assignments.
-      </p>
-      <h3>Using Downtime Productively</h3>
-      <p>
-        There are often periods of downtime between assignments, and I initially wasn't sure how to best use that time.
-        Over time, I chose to use it more intentionally by learning new skills outside of my assigned tasks.
-        For example, I've started learning the basics of relational databases and practicing SQL queries.
-        This has helped me make better use of my time and continue developing technical skills beyond my day-to-day responsibilities.
-      </p>
-      <h3>Building Connections</h3>
-      <p>
-        Because internships involve working with the same group of people over an extended period, building relationships is important.
-        Getting to know other interns and full-time employees has made it easier to collaborate and ask for help when needed.
-        It has also made the experience more engaging overall, and in some cases has even led to opportunities to collaborate outside of my assigned work.
-      </p>
-      <h3>Making the Most of an Internship</h3>
-      <p>
-        Ultimately, an internship experience depends largely on how you choose to approach it.
-        Beyond completing assigned tasks, it's an opportunity to learn, grow, and build relationships.
-        Taking initiative and staying engaged can make a significant difference in what you get out of the experience.
-      </p>
-    `
-  }
-};
+    // ─── YOUR POSTS ───────────────────────────────────────────────────────────────
+    // Keys here must match the id passed to openPost() in the .post-row onclick above.
+    // The hash in href (e.g. #post-binary) is what the homepage links to — it triggers
+    // the right modal to open automatically when someone arrives from index.html.
+    //
+    // Hash → post key map (add an entry here whenever you add a new post):
+    const hashToPost = {
+      'post-binary':     '2048-cupcakes',
+      'post-internship': 'internship-advice'
+    };
+
+    const posts = {
+      "2048-cupcakes": {
+        title: "How 2048 Cupcakes Taught Me Binary",
+        tag: "Learning",
+        date: "June 2026",
+        body: `
+          <p>
+            The first time I learned how to code was during my freshman year Introduction to Programming class in high school.
+            Fast forward to today, and I don't remember much from that class. However, I do remember learning about the binary number system.
+          </p>
+          <p>
+            Binary is how computers communicate. Instead of human language, computers represent all information using just two states: 0 and 1.
+            Each of these numbers, called bits, can be thought of as "off" and "on" switches.
+            Every position in a binary number represents a power of two, and whenever there's a 1 in a position, that value is included in the final number.
+          </p>
+          <p>
+            For example, if I wanted to write the number 8 in binary, it would be written as 1000.
+            Reading from right to left, the positions represent 2&#x2070;, 2&#xB9;, 2&#xB2;, and 2&#xB3;.
+            Since only the 2&#xB3; position is turned on, the value is 8. But what does 2048 Cupcakes have to do with any of this?
+          </p>
+          <p>
+            If you've played 2048, you know that same-value blocks merge and double.
+            After every move, a new block appears on the board.
+            The goal is to keep combining blocks to create the highest value possible before you run out of space.
+          </p>
+          <p>
+            My favorite part about the cupcake version of 2048 is the images used for each block.
+            Every number is represented by a different cupcake. 2 is Vanilla Birthday, 4 is Bubblegum Pink, 8 is Sunshine Vanilla, and so on.
+            The cupcakes make the game much more fun than the original version, but the numbers behind them remain constant.
+          </p>
+          <p>
+            Every time you combine two matching cupcakes, the value doubles.
+            The game goes from 2 to 4, then 8, 16, 32, 64, 128, 256, and beyond.
+            The game skips 1, but from 2 onward, every value is a power of two. That pattern is exactly what binary is built on.
+          </p>
+          <p>
+            This concept is especially important in networking. An 8-bit binary number, called an octet, can represent 256 different values, ranging from 0 to 255.
+            Each bit represents one power of two, beginning with 2&#x2070; and ending with 2&#x2077;.
+            Once I understood that connection, the binary number system became much easier for me to visualize.
+          </p>
+          <p>
+            I think that's one of the reasons this game helped me understand binary.
+            Yes, I have the powers memorized and can calculate binary numbers in my head, but I can also see the cupcakes.
+            It turned binary into something visual, and I found myself recognizing the pattern easily.
+          </p>
+          <p>
+            If you're trying to learn binary, I highly recommend spending a little time playing 2048 Cupcakes,
+            although maybe not to the extent I did this past semester.
+            It's a fun way to become more familiar with powers of two while trying to unlock every cupcake.
+          </p>
+          <p>
+            Finally, I'd like to thank a friend for helping me understand binary this past semester.
+            If you're reading this, you know who you are.
+          </p>
+          <p><a href="https://2048cupcakes.net" target="_blank">https://2048cupcakes.net</a></p>
+        `
+      },
+      "internship-advice": {
+        title: "What I've Learned From My Internship So Far",
+        tag: "Internship",
+        date: "June 2026",
+        body: `
+          <p>
+            As someone pursuing a cybersecurity degree, I didn't initially expect to find myself in a marketing internship.
+            However, I've learned that any opportunity in a professional environment can provide valuable experience,
+            regardless of the specific field.
+          </p>
+          <p>
+            Before starting at Gravic, I had done some research on the company and was somewhat familiar with its software products.
+            However, my role has focused more on marketing and lab-related work rather than the core software itself.
+            My responsibilities have included creating presentations, writing scripts, and supporting lab projects.
+            After a month in the role, I've already learned several lessons that are useful for anyone preparing for an office environment.
+          </p>
+          <h3>Communication</h3>
+          <p>
+            Tools like Outlook and Microsoft Teams are used constantly in the workplace.
+            Much of my work involves communicating with individuals I may not have met in person, often multiple times a day,
+            to request feedback or clarification.
+            This has pushed me outside of my comfort zone, especially since I wasn't used to regularly asking for help while producing client-facing materials.
+            I also underestimated how iterative the review process can be, with multiple rounds of feedback and revision being a normal part of workflow.
+          </p>
+          <h3>Expectations</h3>
+          <p>
+            At the beginning of my internship, I was assigned smaller marketing tasks, including designing a branded item for clients.
+            After submitting my initial design, I moved on to other work and didn't initially realize the level of impact my contribution would have.
+            During a weekly meeting with the marketing team and company leadership, I learned that my work was being seriously considered for use.
+            This helped me better understand both the expectations and the real-world impact of even small assignments.
+          </p>
+          <h3>Using Downtime Productively</h3>
+          <p>
+            There are often periods of downtime between assignments, and I initially wasn't sure how to best use that time.
+            Over time, I chose to use it more intentionally by learning new skills outside of my assigned tasks.
+            For example, I've started learning the basics of relational databases and practicing SQL queries.
+            This has helped me make better use of my time and continue developing technical skills beyond my day-to-day responsibilities.
+          </p>
+          <h3>Building Connections</h3>
+          <p>
+            Because internships involve working with the same group of people over an extended period, building relationships is important.
+            Getting to know other interns and full-time employees has made it easier to collaborate and ask for help when needed.
+            It has also made the experience more engaging overall, and in some cases has even led to opportunities to collaborate outside of my assigned work.
+          </p>
+          <h3>Making the Most of an Internship</h3>
+          <p>
+            Ultimately, an internship experience depends largely on how you choose to approach it.
+            Beyond completing assigned tasks, it's an opportunity to learn, grow, and build relationships.
+            Taking initiative and staying engaged can make a significant difference in what you get out of the experience.
+          </p>
+        `
+      }
+    };
     // ─────────────────────────────────────────────────────────────────────────────
 
     function openPost(id) {
@@ -455,11 +460,14 @@ const posts = {
       document.getElementById('modalBody').innerHTML    = post.body;
       document.getElementById('modalOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
+      // Update the URL hash so the link is shareable
+      history.replaceState(null, '', '#' + Object.keys(hashToPost).find(k => hashToPost[k] === id));
     }
 
     function closePost() {
       document.getElementById('modalOverlay').classList.remove('open');
       document.body.style.overflow = '';
+      history.replaceState(null, '', window.location.pathname);
     }
 
     function handleOverlayClick(e) {
@@ -467,6 +475,14 @@ const posts = {
     }
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closePost(); });
+
+    // On page load, check if a hash is present and open the matching post
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && hashToPost[hash]) {
+        openPost(hashToPost[hash]);
+      }
+    });
   </script>
 
 </body>
