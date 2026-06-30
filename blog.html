@@ -280,20 +280,21 @@
     <div class="post-list" id="postList">
 
       <!-- EXAMPLE POST — replace with your own -->
-      <a class="post-row" href="#" data-post="internship-advice" onclick="openPost('internship-advice'); return false;">
-        <div class="post-left">
-          <div class="post-tag">Internship</div>
-          <div class="post-title">What I’ve Learned From My Internship So Far</div>
-          <div class="post-excerpt">I just completed a month at Gravic. Here are a few things I’d like to share about the experience.</div>
-        </div>
-        <div class="post-date">June 2026</div>
-      </a>
       
       <a class="post-row" href="#" data-post="2048-cupcakes" onclick="openPost('2048-cupcakes'); return false;">
         <div class="post-left">
           <div class="post-tag">Learning</div>
           <div class="post-title">How 2048 Cupcakes Taught Me Binary</div>
           <div class="post-excerpt">A cupcake-themed game turned out to be the best way I've found to visualize the binary number system.</div>
+        </div>
+        <div class="post-date">June 2026</div>
+      </a>
+
+      <a class="post-row" href="#" data-post="internship-advice" onclick="openPost('internship-advice'); return false;">
+        <div class="post-left">
+          <div class="post-tag">Internship</div>
+          <div class="post-title">What I’ve Learned From My Internship So Far</div>
+          <div class="post-excerpt">I just completed a month at Gravic. Here are a few things I’d like to share about the experience.</div>
         </div>
         <div class="post-date">June 2026</div>
       </a>
@@ -334,58 +335,6 @@
     // Each key matches the data-post value on the .post-row link in the HTML above.
     // body supports <p>, <h3>, and other basic HTML tags.
 const posts = {
-  "internship-advice": {
-    title: "What I've Learned From My Internship So Far",
-    tag: "Internship",
-    date: "June 2026",
-    body: `
-      <p>
-        As someone pursuing a cybersecurity degree, I didn't initially expect to find myself in a marketing internship.
-        However, I've learned that any opportunity in a professional environment can provide valuable experience,
-        regardless of the specific field.
-      </p>
-      <p>
-        Before starting at Gravic, I had done some research on the company and was somewhat familiar with its software products.
-        However, my role has focused more on marketing and lab-related work rather than the core software itself.
-        My responsibilities have included creating presentations, writing scripts, and supporting lab projects.
-        After a month in the role, I've already learned several lessons that are useful for anyone preparing for an office environment.
-      </p>
-      <h3>Communication</h3>
-      <p>
-        Tools like Outlook and Microsoft Teams are used constantly in the workplace.
-        Much of my work involves communicating with individuals I may not have met in person, often multiple times a day,
-        to request feedback or clarification.
-        This has pushed me outside of my comfort zone, especially since I wasn't used to regularly asking for help while producing client-facing materials.
-        I also underestimated how iterative the review process can be, with multiple rounds of feedback and revision being a normal part of workflow.
-      </p>
-      <h3>Expectations</h3>
-      <p>
-        At the beginning of my internship, I was assigned smaller marketing tasks, including designing a branded item for clients.
-        After submitting my initial design, I moved on to other work and didn't initially realize the level of impact my contribution would have.
-        During a weekly meeting with the marketing team and company leadership, I learned that my work was being seriously considered for use.
-        This helped me better understand both the expectations and the real-world impact of even small assignments.
-      </p>
-      <h3>Using Downtime Productively</h3>
-      <p>
-        There are often periods of downtime between assignments, and I initially wasn't sure how to best use that time.
-        Over time, I chose to use it more intentionally by learning new skills outside of my assigned tasks.
-        For example, I've started learning the basics of relational databases and practicing SQL queries.
-        This has helped me make better use of my time and continue developing technical skills beyond my day-to-day responsibilities.
-      </p>
-      <h3>Building Connections</h3>
-      <p>
-        Because internships involve working with the same group of people over an extended period, building relationships is important.
-        Getting to know other interns and full-time employees has made it easier to collaborate and ask for help when needed.
-        It has also made the experience more engaging overall, and in some cases has even led to opportunities to collaborate outside of my assigned work.
-      </p>
-      <h3>Making the Most of an Internship</h3>
-      <p>
-        Ultimately, an internship experience depends largely on how you choose to approach it.
-        Beyond completing assigned tasks, it's an opportunity to learn, grow, and build relationships.
-        Taking initiative and staying engaged can make a significant difference in what you get out of the experience.
-      </p>
-    `
-  },
   "2048-cupcakes": {
     title: "How 2048 Cupcakes Taught Me Binary",
     tag: "Learning",
@@ -440,6 +389,58 @@ const posts = {
         If you're reading this, you know who you are.
       </p>
       <p><a href="https://2048cupcakes.net" target="_blank">https://2048cupcakes.net</a></p>
+    `
+  },
+  "internship-advice": {
+    title: "What I've Learned From My Internship So Far",
+    tag: "Internship",
+    date: "June 2026",
+    body: `
+      <p>
+        As someone pursuing a cybersecurity degree, I didn't initially expect to find myself in a marketing internship.
+        However, I've learned that any opportunity in a professional environment can provide valuable experience,
+        regardless of the specific field.
+      </p>
+      <p>
+        Before starting at Gravic, I had done some research on the company and was somewhat familiar with its software products.
+        However, my role has focused more on marketing and lab-related work rather than the core software itself.
+        My responsibilities have included creating presentations, writing scripts, and supporting lab projects.
+        After a month in the role, I've already learned several lessons that are useful for anyone preparing for an office environment.
+      </p>
+      <h3>Communication</h3>
+      <p>
+        Tools like Outlook and Microsoft Teams are used constantly in the workplace.
+        Much of my work involves communicating with individuals I may not have met in person, often multiple times a day,
+        to request feedback or clarification.
+        This has pushed me outside of my comfort zone, especially since I wasn't used to regularly asking for help while producing client-facing materials.
+        I also underestimated how iterative the review process can be, with multiple rounds of feedback and revision being a normal part of workflow.
+      </p>
+      <h3>Expectations</h3>
+      <p>
+        At the beginning of my internship, I was assigned smaller marketing tasks, including designing a branded item for clients.
+        After submitting my initial design, I moved on to other work and didn't initially realize the level of impact my contribution would have.
+        During a weekly meeting with the marketing team and company leadership, I learned that my work was being seriously considered for use.
+        This helped me better understand both the expectations and the real-world impact of even small assignments.
+      </p>
+      <h3>Using Downtime Productively</h3>
+      <p>
+        There are often periods of downtime between assignments, and I initially wasn't sure how to best use that time.
+        Over time, I chose to use it more intentionally by learning new skills outside of my assigned tasks.
+        For example, I've started learning the basics of relational databases and practicing SQL queries.
+        This has helped me make better use of my time and continue developing technical skills beyond my day-to-day responsibilities.
+      </p>
+      <h3>Building Connections</h3>
+      <p>
+        Because internships involve working with the same group of people over an extended period, building relationships is important.
+        Getting to know other interns and full-time employees has made it easier to collaborate and ask for help when needed.
+        It has also made the experience more engaging overall, and in some cases has even led to opportunities to collaborate outside of my assigned work.
+      </p>
+      <h3>Making the Most of an Internship</h3>
+      <p>
+        Ultimately, an internship experience depends largely on how you choose to approach it.
+        Beyond completing assigned tasks, it's an opportunity to learn, grow, and build relationships.
+        Taking initiative and staying engaged can make a significant difference in what you get out of the experience.
+      </p>
     `
   }
 };
