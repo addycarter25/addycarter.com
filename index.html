@@ -94,16 +94,14 @@ nav {
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .corner-decor {
-  position: fixed;
-  bottom: -30px;
-  right: -30px;
+  display: block;
+  margin: 2rem 0 0 auto;
   width: 260px;
-  z-index: 5;
   pointer-events: none;
   user-select: none;
 }
 @media (max-width: 680px) {
-  .corner-decor { width: 140px; bottom: -15px; right: -15px; }
+  .corner-decor { width: 140px; }
 }
 
 
@@ -578,6 +576,7 @@ footer a { color: var(--steel); text-decoration: none; }
 <footer>
   <a href="mailto:agc5787@psu.edu">agc5787@psu.edu</a> &nbsp;·&nbsp;
   <a href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">linkedin.com/addycarter</a>
+  <img src="cheerbear.png" class="corner-decor" alt="" />
 </footer>
 
 <script>
@@ -592,6 +591,5 @@ footer a { color: var(--steel); text-decoration: none; }
     });
   });
 </script>
-<img src="cheerbear.png" class="corner-decor" alt="" />
 </body>
 </html>
