@@ -20,6 +20,15 @@
   --sans: 'DM Sans', system-ui, sans-serif;
 }
 
+.interest-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--steel);
+}
+.interest-link:hover {
+  color: var(--steel);
+}
+  
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -536,8 +545,7 @@ footer a { color: var(--steel); text-decoration: none; }
       <div>
         <p class="section-label">Interests</p>
         <div class="interests-grid">
-          <div class="interest-tag"><span class="icon">⭐</span> Crochet</div>
-          <div class="interest-tag"><span class="icon">⭐</span> Attending Concerts</div>
+          <div class="interest-tag"><span class="icon">⭐</span> <a href="https://www.instagram.com/crochetedbyaddy" target="_blank" rel="noopener" class="interest-link">crochet</a></div>          <div class="interest-tag"><span class="icon">⭐</span> Attending Concerts</div>
           <div class="interest-tag"><span class="icon">⭐</span> Music &amp; Podcasts</div>
           <div class="interest-tag"><span class="icon">⭐</span> Watching Movies</div>
           <div class="interest-tag"><span class="icon">⭐</span> Reading</div>
