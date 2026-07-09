@@ -93,6 +93,19 @@ nav {
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+.corner-decor {
+  position: fixed;
+  bottom: -30px;
+  right: -30px;
+  width: 260px;
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 680px) {
+  .corner-decor { width: 140px; bottom: -15px; right: -15px; }
+}
+
 
 /* HERO */
 .hero {
@@ -579,5 +592,6 @@ footer a { color: var(--steel); text-decoration: none; }
     });
   });
 </script>
+<img src="cheerbear.png" class="corner-decor" alt="" />
 </body>
 </html>
