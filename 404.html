@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page Not Found — Addy Carter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --steel: #4682B4;
+  --steel-dark: #2C5F8A;
+  --steel-pale: #e8f1f9;
+  --ink: #111827;
+  --mid: #6B7280;
+  --light: #F3F6FA;
+  --white: #FFFFFF;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--light);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid #D0DCE8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 62px;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--mid);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--steel); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* 404 SECTION */
+.error-wrap {
+  min-height: calc(100vh - 62px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.error-inner {
+  max-width: 480px;
+  text-align: center;
+}
+
+.error-code {
+  font-family: var(--serif);
+  font-size: clamp(4rem, 12vw, 7rem);
+  font-weight: 400;
+  color: var(--steel);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.9rem;
+}
+
+.error-sub {
+  font-size: 0.97rem;
+  color: var(--mid);
+  font-weight: 300;
+  margin-bottom: 2.2rem;
+}
+
+.error-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-solid { background: var(--steel); color: var(--white); }
+.btn-solid:hover { background: var(--steel-dark); }
+.btn-ghost {
+  border: 1px solid #D0DCE8;
+  color: var(--ink);
+}
+.btn-ghost:hover { border-color: var(--steel); color: var(--steel); }
+
+@media (max-width: 680px) {
+  nav { padding: 0 1.2rem; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid #D0DCE8;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  .nav-links.open { max-height: 300px; }
+  .nav-links li { border-top: 1px solid #E5EAF0; }
+  .nav-links a { display: block; padding: 1rem 1.4rem; }
+  .error-wrap { padding: 2rem 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Addy Carter</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="competitions.html">Competitions</a></li>
+    <li><a href="blog.html">Posts</a></li>
+    <li><a href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">LinkedIn</a></li>
+  </ul>
+</nav>
+
+<div class="error-wrap">
+  <div class="error-inner">
+    <p class="error-code">404</p>
+    <p class="error-title">Uh oh, we're not in Kansas anymore...</p>
+    <p class="error-sub">The link might be broken, or the page may have been moved. Let's get you back to the yellow brick road.</p>
+    <div class="error-links">
+      <a href="index.html" class="btn btn-solid">Follow the yellow brick road</a>
+      <a href="blog.html" class="btn btn-ghost">Read the posts</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navToggle').classList.toggle('open');
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navToggle').classList.remove('open');
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
