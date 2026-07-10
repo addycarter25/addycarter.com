@@ -119,8 +119,8 @@ nav {
 .hero-cheerbear {
   position: absolute;
   bottom: 0;
-  left: 50rem;
-  width: 240px;
+  left: 3rem;
+  width: 150px;
   height: auto;
   pointer-events: none;
   user-select: none;
@@ -404,6 +404,22 @@ nav {
 
 .sidebar-more:hover { text-decoration: underline; }
 
+.linkedin-post {
+  display: block;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.linkedin-post:hover { opacity: 0.7; }
+
+.linkedin-post-text {
+  font-size: 0.91rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+
 /* FOOTER */
 footer {
   border-top: 1px solid #E5EAF0;
@@ -491,7 +507,7 @@ footer a { color: var(--steel); text-decoration: none; }
       <div>
         <p class="section-label">About Me</p>
         <p class="about-text">
-          I'm a sophomore in Penn State's Schreyer Honors College studying Cybersecurity Analytics &amp; Operations, with minors in Security &amp; Risk Analysis, Information Sciences &amp; Technology, and Corporate Communication. 
+          I'm a sophomore in Penn State's Schreyer Honors College studying Cybersecurity Analytics &amp; Operations, with minors in Security Risk Analysis, Information Sciences &amp; Technology, and Corporate Communication. 
           I love to learn and will take advantage of every opportunity that comes my way.
         </p>
       </div>
@@ -609,7 +625,26 @@ footer a { color: var(--steel); text-decoration: none; }
         </div>
         <a class="sidebar-more" href="blog.html">All posts →</a>
       </div>
-      
+
+      <!-- LINKEDIN SIDEBAR -->
+      <!--
+        TO UPDATE WITH YOUR LATEST POST:
+        1. Replace the href below with the link to your LinkedIn post
+           (open the post on LinkedIn, click the ••• menu, "Copy link to post")
+        2. Replace the text inside .linkedin-post-text with a snippet/opening line
+        3. Update the month/year in .post-meta
+      -->
+      <div class="sidebar-block">
+        <p class="section-label">Latest on LinkedIn</p>
+        <a class="linkedin-post" href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">
+          <div class="linkedin-post-text">
+            Excited to share that I've started my IT Support Specialist Intern role at Penn State's Applied Research Lab...
+          </div>
+          <div class="post-meta">July 2026</div>
+        </a>
+        <a class="sidebar-more" href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">View on LinkedIn →</a>
+      </div>
+
     </aside><!-- /sidebar -->
 
   </div><!-- /content-grid -->
