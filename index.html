@@ -111,17 +111,14 @@ nav {
   user-select: none;
 }
 .hero-photo-group {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
 }
 .hero-cheerbear {
-  position: absolute;
-  bottom: 0;
-  right: 100%;
-  margin-right: -40px;
+  align-self: end;
+  margin-bottom: -5rem;
   width: 240px;
   height: auto;
   pointer-events: none;
@@ -144,7 +141,7 @@ nav {
   max-width: 1060px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   gap: 3rem;
   align-items: center;
 }
@@ -468,7 +465,7 @@ footer a { color: var(--steel); text-decoration: none; }
   .nav-links a { display: block; padding: 1rem 1.4rem; }
   .hero { padding: 3.5rem 1.4rem; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-photo-group { display: none; }
+  .hero-photo-group, .hero-cheerbear { display: none; }
   .interests-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -499,8 +496,8 @@ footer a { color: var(--steel); text-decoration: none; }
         <a href="blog.html" class="btn btn-ghost">Posts</a>
       </div>
     </div>
+    <img src="cheerbear.png" class="hero-cheerbear" alt="" />
     <div class="hero-photo-group">
-      <img src="cheerbear.png" class="hero-cheerbear" alt="" />
       <img src="addy_carter.jpg" alt="Addy Carter" class="hero-photo" />
     </div>
   </div>
