@@ -110,6 +110,19 @@ nav {
   pointer-events: none;
   user-select: none;
 }
+.hero-photo-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.hero-cheerbear {
+  width: 90px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+  
 @media (max-width: 680px) {
   .corner-decor { width: 200px; margin: 1.5rem auto 0; }
 }
@@ -426,8 +439,7 @@ footer a { color: var(--steel); text-decoration: none; }
   .nav-links a { display: block; padding: 1rem 1.4rem; }
   .hero { padding: 3.5rem 1.4rem; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-photo { display: none; }
-  .page-body { padding: 0 1.4rem; }
+  .hero-photo-group { display: none; }
   .interests-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -458,7 +470,10 @@ footer a { color: var(--steel); text-decoration: none; }
         <a href="blog.html" class="btn btn-ghost">Posts</a>
       </div>
     </div>
-    <img src="addy_carter.jpg" alt="Addy Carter" class="hero-photo" />
+    <div class="hero-photo-group">
+      <img src="cheerbear.png" class="hero-cheerbear" alt="" />
+      <img src="addy_carter.jpg" alt="Addy Carter" class="hero-photo" />
+    </div>
   </div>
 </div>
 
@@ -590,9 +605,7 @@ footer a { color: var(--steel); text-decoration: none; }
         </div>
         <a class="sidebar-more" href="blog.html">All posts →</a>
       </div>
-
-      <img src="cheerbear.png" class="corner-decor" alt="" />
-
+      
     </aside><!-- /sidebar -->
 
   </div><!-- /content-grid -->
