@@ -27,7 +27,6 @@ body {
   line-height: 1.65;
   font-size: 17px;
 }
-
 /* NAV */
 nav {
   position: sticky;
@@ -62,7 +61,6 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--steel); }
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -86,7 +84,6 @@ nav {
 .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.open span:nth-child(2) { opacity: 0; }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
 /* PAGE HEADER */
 .page-head {
   background: var(--steel);
@@ -112,12 +109,11 @@ nav {
   margin-bottom: 0.7rem;
 }
 .page-sub {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: rgba(255,255,255,0.75);
   font-weight: 300;
-  max-width: 480px;
+  white-space: nowrap;
 }
-
 /* DIVIDER */
 .divider {
   max-width: 820px;
@@ -125,7 +121,6 @@ nav {
   border: none;
   border-top: 1px solid #E5EAF0;
 }
-
 /* TRACKS */
 .section {
   max-width: 820px;
@@ -159,7 +154,6 @@ nav {
   font-size: 0.88rem;
   color: var(--steel);
 }
-
 /* FOOTER */
 footer {
   border-top: 1px solid #E5EAF0;
@@ -169,7 +163,6 @@ footer {
   color: var(--mid);
 }
 footer a { color: var(--steel); text-decoration: none; }
-
 @media (max-width: 680px) {
   nav { padding: 0 1.2rem; }
   .nav-toggle { display: flex; }
@@ -200,274 +193,266 @@ footer a { color: var(--steel); text-decoration: none; }
 <body>
 
 <nav>
-  <a class="nav-logo" href="/">Addy Carter</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" onclick="toggleNav()">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="/">Home</a></li>
-    <li><a href="competitions.html">Competitions</a></li>
-    <li><a href="blog.html">Posts</a></li>
-    <li><a href="playlist.html" class="active">Playlist</a></li>
-    <li><a href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">LinkedIn</a></li>
-  </ul>
+<a class="nav-logo" href="/">Addy Carter</a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle menu" onclick="toggleNav()">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="/">Home</a></li>
+<li><a href="competitions.html">Competitions</a></li>
+<li><a href="blog.html">Posts</a></li>
+<li><a href="playlist.html" class="active">Playlist</a></li>
+<li><a href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">LinkedIn</a></li>
+</ul>
 </nav>
 
 <div class="page-head">
-  <div class="page-head-inner">
-    <p class="page-tag">Music Recommendations</p>
-    <h1>Playlist</h1>
-    <p class="page-sub">Songs that I think everyone should listen to at least once in their lifetime.</p>
-  </div>
+<div class="page-head-inner">
+<p class="page-tag">Music Recommendations</p>
+<h1>Playlist</h1>
+<p class="page-sub">Songs that I think everyone should listen to at least once in their lifetime.</p>
+</div>
 </div>
 
 <hr class="divider" />
 
 <div class="section" id="trackList">
+<!-- To add a track: copy one .track block and update the number, title, and artist. -->
 
-  <!-- To add a track: copy one .track block and update the number, title, and artist. -->
+<div class="track">
+<span class="track-num">01</span>
+<span class="track-title">For Reasons Unknown</span>
+<span class="track-artist">The Killers</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">01</span>
-    <span class="track-title">For Reasons Unknown</span>
-    <span class="track-artist">The Killers</span>
-  </div>
+<div class="track">
+<span class="track-num">02</span>
+<span class="track-title">Disorder</span>
+<span class="track-artist">Joy Division</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">02</span>
-    <span class="track-title">Disorder</span>
-    <span class="track-artist">Joy Division</span>
-  </div>
+<div class="track">
+<span class="track-num">03</span>
+<span class="track-title">Be Quiet and Drive (Far Away)</span>
+<span class="track-artist">Deftones</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">03</span>
-    <span class="track-title">Be Quiet and Drive (Far Away)</span>
-    <span class="track-artist">Deftones</span>
-  </div>
+<div class="track">
+<span class="track-num">04</span>
+<span class="track-title">You're Not the Only One</span>
+<span class="track-artist">The Sundays</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">04</span>
-    <span class="track-title">You're Not the Only One</span>
-    <span class="track-artist">The Sundays</span>
-  </div>
+<div class="track">
+<span class="track-num">05</span>
+<span class="track-title">Mind Over Matter</span>
+<span class="track-artist">Young the Giant</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">05</span>
-    <a class="track-title" href="https://youtu.be/FRHk9P46o9Q?si=R_i8ONBq2b-TyPLN">Mind Over Matter</a>
-    <span class="track-artist">Young the Giant</span>
-  </div>
+<div class="track">
+<span class="track-num">06</span>
+<span class="track-title">Tompkins Square Park</span>
+<span class="track-artist">Mumford & Sons</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">06</span>
-    <span class="track-title">Tompkins Square Park</span>
-    <span class="track-artist">Mumford & Sons</span>
-  </div>
+<div class="track">
+<span class="track-num">07</span>
+<span class="track-title">Lover, You Should've Come Over</span>
+<span class="track-artist">Jeff Buckley</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">07</span>
-    <a class="track-title" href="https://youtu.be/F_eLuk4RjIQ?si=uu3l9lRndQFIuf-n">Lover, You Should've Come Over</a>
-    <span class="track-artist">Jeff Buckley</span>
-  </div>
+<div class="track">
+<span class="track-num">08</span>
+<span class="track-title">Gypsy</span>
+<span class="track-artist">Fleetwood Mac</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">08</span>
-    <span class="track-title">Gypsy</span>
-    <span class="track-artist">Fleetwood Mac</span>
-  </div>
+<div class="track">
+<span class="track-num">09</span>
+<span class="track-title">Everlong</span>
+<span class="track-artist">Foo Fighters</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">09</span>
-    <span class="track-title">Everlong</span>
-    <span class="track-artist">Foo Fighters</span>
-  </div>
+<div class="track">
+<span class="track-num">10</span>
+<span class="track-title">Don't Look Back in Anger</span>
+<span class="track-artist">Oasis</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">09</span>
-    <a class="track-title" href="https://youtu.be/fcP0-TPlcS0?si=MkCMxbzQ-TaVYIA6">Everlong</a>
-    <span class="track-artist">Foo Fighters</span>
-  </div>
+<div class="track">
+<span class="track-num">11</span>
+<span class="track-title">I Melt with You</span>
+<span class="track-artist">Modern English</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">10</span>
-    <span class="track-title">Don't Look Back in Anger</span>
-    <span class="track-artist">Oasis</span>
-  </div>
+<div class="track">
+<span class="track-num">12</span>
+<span class="track-title">Don't Change</span>
+<span class="track-artist">INXS</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">11</span>
-    <span class="track-title">I Melt with You</span>
-    <span class="track-artist">Modern English</span>
-  </div>
+<div class="track">
+<span class="track-num">13</span>
+<span class="track-title">Cico Buff</span>
+<span class="track-artist">Cocteau Twins</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">12</span>
-    <span class="track-title">Don't Change</span>
-    <span class="track-artist">INXS</span>
-  </div>
+<div class="track">
+<span class="track-num">14</span>
+<span class="track-title">Fortunate Son</span>
+<span class="track-artist">Creedence Clearwater Revival</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">13</span>
-    <span class="track-title">Cico Buff</span>
-    <span class="track-artist">Cocteau Twins</span>
-  </div>
+<div class="track">
+<span class="track-num">15</span>
+<span class="track-title">Young Folks</span>
+<span class="track-artist">Peter Bjorn and John</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">14</span>
-    <span class="track-title">Fortunate Son</span>
-    <span class="track-artist">Creedence Clearwater Revival</span>
-  </div>
+<div class="track">
+<span class="track-num">16</span>
+<span class="track-title">Bullet with Butterfly Wings</span>
+<span class="track-artist">The Smashing Pumpkins</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">15</span>
-    <a class="track-title" href="https://youtu.be/Q2xGTbFJGNQ?si=tM03dDE3rZTz6_t0">Young Folks</a>
-    <span class="track-artist">Peter Bjorn and John</span>
-  </div>
+<div class="track">
+<span class="track-num">17</span>
+<span class="track-title">Jigsaw Falling Into Place</span>
+<span class="track-artist">Radiohead</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">16</span>
-    <span class="track-title">Bullet with Butterfly Wings</span>
-    <span class="track-artist">The Smashing Pumpkins</span>
-  </div>
+<div class="track">
+<span class="track-num">18</span>
+<span class="track-title">Leave</span>
+<span class="track-artist">Whirr</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">17</span>
-    <span class="track-title">Jigsaw Falling Into Place</span>
-    <span class="track-artist">Radiohead</span>
-  </div>
+<div class="track">
+<span class="track-num">19</span>
+<span class="track-title">Always Forever</span>
+<span class="track-artist">Cults</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">18</span>
-    <span class="track-title">Leave</span>
-    <span class="track-artist">Whirr</span>
-  </div>
+<div class="track">
+<span class="track-num">20</span>
+<span class="track-title">Bennie and the Jets</span>
+<span class="track-artist">Elton John</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">19</span>
-    <span class="track-title">Always Forever</span>
-    <span class="track-artist">Cults</span>
-  </div>
+<div class="track">
+<span class="track-num">21</span>
+<span class="track-title">Caution</span>
+<span class="track-artist">The Killers</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">20</span>
-    <span class="track-title">Bennie and the Jets</span>
-    <span class="track-artist">Elton John</span>
-  </div>
+<div class="track">
+<span class="track-num">22</span>
+<span class="track-title">Morning Glory</span>
+<span class="track-artist">Oasis</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">21</span>
-    <span class="track-title">Caution</span>
-    <span class="track-artist">The Killers</span>
-  </div>
+<div class="track">
+<span class="track-num">23</span>
+<span class="track-title">Gypsys, Tramps & Thieves</span>
+<span class="track-artist">Cher</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">22</span>
-    <span class="track-title">Morning Glory</span>
-    <span class="track-artist">Oasis</span>
-  </div>
+<div class="track">
+<span class="track-num">24</span>
+<span class="track-title">Everybody Wants to Rule the World</span>
+<span class="track-artist">Tears for Fears</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">23</span>
-    <span class="track-title">Gypsys, Tramps & Thieves</span>
-    <span class="track-artist">Cher</span>
-  </div>
+<div class="track">
+<span class="track-num">25</span>
+<span class="track-title">Dreams</span>
+<span class="track-artist">Van Halen</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">24</span>
-    <span class="track-title">Everybody Wants to Rule the World</span>
-    <span class="track-artist">Tears for Fears</span>
-  </div>
+<div class="track">
+<span class="track-num">26</span>
+<span class="track-title">Forever in Blue Jeans</span>
+<span class="track-artist">Neil Diamond</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">25</span>
-    <span class="track-title">Dreams</span>
-    <span class="track-artist">Van Halen</span>
-  </div>
+<div class="track">
+<span class="track-num">27</span>
+<span class="track-title">Sleep On the Floor</span>
+<span class="track-artist">The Lumineers</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">26</span>
-    <span class="track-title">Forever in Blue Jeans</span>
-    <span class="track-artist">Neil Diamond</span>
-  </div>
+<div class="track">
+<span class="track-num">28</span>
+<span class="track-title">In the Car Outside</span>
+<span class="track-artist">The Killers</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">27</span>
-    <span class="track-title">Sleep On the Floor</span>
-    <span class="track-artist">The Lumineers</span>
-  </div>
+<div class="track">
+<span class="track-num">29</span>
+<span class="track-title">Dakota</span>
+<span class="track-artist">Stereophonics</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">28</span>
-    <span class="track-title">In the Car Outside</span>
-    <span class="track-artist">The Killers</span>
-  </div>
+<div class="track">
+<span class="track-num">30</span>
+<span class="track-title">Roll My Stone</span>
+<span class="track-artist">Arcy Drive</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">29</span>
-    <a class="track-title" href="https://youtu.be/wnf7LX63fpM?si=-iTiZrrHE9mYZbLE">Dakota</a>
-    <span class="track-artist">Stereophonics</span>
-  </div>
+<div class="track">
+<span class="track-num">31</span>
+<span class="track-title">I Will Wait</span>
+<span class="track-artist">Mumford & Sons</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">30</span>
-    <span class="track-title">Roll My Stone</span>
-    <span class="track-artist">Arcy Drive</span>
-  </div>
+<div class="track">
+<span class="track-num">32</span>
+<span class="track-title">Notion</span>
+<span class="track-artist">Kings of Leon</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">31</span>
-    <span class="track-title">I Will Wait</span>
-    <span class="track-artist">Mumford & Sons</span>
-  </div>
+<div class="track">
+<span class="track-num">33</span>
+<span class="track-title">Interstate Love Song</span>
+<span class="track-artist">Stone Temple Pilots</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">32</span>
-    <span class="track-title">Notion</span>
-    <span class="track-artist">Kings of Leon</span>
-  </div>
+<div class="track">
+<span class="track-num">34</span>
+<span class="track-title">All I Wanted</span>
+<span class="track-artist">Paramore</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">33</span>
-    <span class="track-title">Interstate Love Song</span>
-    <span class="track-artist">Stone Temple Pilots</span>
-  </div>
+<div class="track">
+<span class="track-num">35</span>
+<span class="track-title">Safe and Sound</span>
+<span class="track-artist">Capital Cities</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">34</span>
-    <a class="track-title" href="https://youtu.be/J-i_YUptO7I?si=lfg4dh_yVZrVpXWr">All I Wanted</a>
-    <span class="track-artist">Paramore</span>
-  </div>
+<div class="track">
+<span class="track-num">36</span>
+<span class="track-title">The Air that I Breathe</span>
+<span class="track-artist">The Hollies</span>
+</div>
 
-  <div class="track">
-    <span class="track-num">35</span>
-    <span class="track-title">Safe and Sound</span>
-    <span class="track-artist">Capital Cities</span>
-  </div>
-
-  <div class="track">
-    <span class="track-num">36</span>
-    <span class="track-title">The Air that I Breathe</span>
-    <span class="track-artist">The Hollies</span>
-  </div>
-  
 </div>
 
 <footer>
-  <a href="mailto:agc5787@psu.edu">agc5787@psu.edu</a> &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">linkedin.com/addycarter</a>
+<a href="mailto:agc5787@psu.edu">agc5787@psu.edu</a> &nbsp;·&nbsp;
+<a href="https://www.linkedin.com/in/addycarter/" target="_blank" rel="noopener">linkedin.com/addycarter</a>
 </footer>
 
 <script>
-  function toggleNav() {
-    document.getElementById('navToggle').classList.toggle('open');
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-  document.querySelectorAll('.nav-links a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      document.getElementById('navToggle').classList.remove('open');
-      document.getElementById('navLinks').classList.remove('open');
-    });
+function toggleNav() {
+  document.getElementById('navToggle').classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navToggle').classList.remove('open');
+    document.getElementById('navLinks').classList.remove('open');
   });
+});
 </script>
-
 </body>
 </html>
