@@ -111,11 +111,14 @@ nav {
   user-select: none;
 }
 .hero-photo-group {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
-  margin-left: 6rem;
 }
 
 @media (max-width: 680px) {
@@ -135,8 +138,7 @@ nav {
   margin: 0 auto;
   padding: 0 3rem;
   display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 3rem;
+  grid-template-columns: 1fr;
   align-items: center;
 }
 
@@ -485,7 +487,7 @@ footer a { color: var(--steel); text-decoration: none; }
       </div>
     </div>
     <div class="hero-photo-group">
-      <img src="addycarter.jpeg" alt="Addy Carter" class="hero-photo" />
+      <img src="addycarter.jpg" alt="Addy Carter" class="hero-photo" />
     </div>
   </div>
 </div>
