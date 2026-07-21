@@ -157,9 +157,21 @@ a.track-title:hover {
   color: var(--steel);
   text-decoration: underline;
 }
-.track-artist {
-  font-size: 0.88rem;
-  color: var(--steel);
+.track-body {
+display: flex;
+flex-direction: column;
+gap: 0.15rem;
+}
+.track-main {
+display: flex;
+align-items: flex-start;
+gap: 1.3rem;
+}
+.track-note {
+font-size: 0.78rem;
+color: var(--mid);
+font-weight: 300;
+margin-top: 0.15rem;
 }
 /* FOOTER */
 footer {
@@ -228,8 +240,13 @@ footer a { color: var(--steel); text-decoration: none; }
 
 <div class="track">
 <span class="track-num">01</span>
+<div class="track-body">
+<div class="track-main">
 <span class="track-title">For Reasons Unknown</span>
 <span class="track-artist">The Killers</span>
+</div>
+<p class="track-note">Brandon Flowers always puts on a great show</p>
+</div>
 </div>
 
 <div class="track">
@@ -282,8 +299,13 @@ footer a { color: var(--steel); text-decoration: none; }
 
 <div class="track">
 <span class="track-num">10</span>
+<div class="track-body">
+<div class="track-main">
 <span class="track-title">Don't Look Back in Anger</span>
 <span class="track-artist">Oasis</span>
+</div>
+<p class="track-note">From one of the best albums of all time</p>
+</div>
 </div>
 
 <div class="track">
@@ -318,8 +340,13 @@ footer a { color: var(--steel); text-decoration: none; }
 
 <div class="track">
 <span class="track-num">16</span>
+<div class="track-body">
+<div class="track-main">
 <span class="track-title">Bullet with Butterfly Wings</span>
 <span class="track-artist">The Smashing Pumpkins</span>
+</div>
+<p class="track-note">This song is in the show </I>Psych</i></p>
+</div>
 </div>
 
 <div class="track">
@@ -366,8 +393,13 @@ footer a { color: var(--steel); text-decoration: none; }
 
 <div class="track">
 <span class="track-num">24</span>
+<div class="track-body">
+<div class="track-main">
 <span class="track-title">Everybody Wants to Rule the World</span>
 <span class="track-artist">Tears for Fears</span>
+</div>
+<p class="track-note">Fun fact: I met Curt Smith</p>
+</div>
 </div>
 
 <div class="track">
@@ -441,17 +473,27 @@ footer a { color: var(--steel); text-decoration: none; }
 <span class="track-title">The Air that I Breathe</span>
 <span class="track-artist">The Hollies</span>
 </div>
-
+  
 <div class="track">
 <span class="track-num">37</span>
+<div class="track-body">
+<div class="track-main">
 <span class="track-title">Solsbury Hill</span>
 <span class="track-artist">Peter Gabriel</span>
+</div>
+<p class="track-note">I wrote about this song in my 9th grade English class</p>
+</div>
 </div>
 
 <div class="track">
 <span class="track-num">38</span>
+<div class="track-body">
+<div class="track-main">
 <span class="track-title">Sprawl II (Mountains Beyond Mountains)</span>
 <span class="track-artist">Arcade Fire</span>
+</div>
+<p class="track-note">Listen to Sprawl I and Sprawl II together</p>
+</div>
 </div>
 
 </div>
